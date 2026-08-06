@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | Poetry Garden</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#ede7e5",
+                    "on-primary-fixed-variant": "#51453a",
+                    "outline-variant": "#d0c4bc",
+                    "surface": "#fef8f6",
+                    "on-surface-variant": "#4d453f",
+                    "on-background": "#1d1b1a",
+                    "on-secondary-container": "#78520f",
+                    "secondary-container": "#fec97c",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1d1b1a",
+                    "on-tertiary-fixed-variant": "#41484d",
+                    "on-tertiary-fixed": "#151c21",
+                    "tertiary": "#0b1217",
+                    "inverse-primary": "#d5c3b6",
+                    "outline": "#7f756e",
+                    "background": "#fef8f6",
+                    "inverse-surface": "#32302f",
+                    "primary": "#180f08",
+                    "secondary-fixed": "#ffddb1",
+                    "primary-container": "#2e241b",
+                    "tertiary-container": "#20272c",
+                    "surface-container-highest": "#e7e1df",
+                    "surface-bright": "#fef8f6",
+                    "primary-fixed-dim": "#d5c3b6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#7e5714",
+                    "secondary-fixed-dim": "#f2be72",
+                    "inverse-on-surface": "#f5f0ed",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#695c51",
+                    "on-tertiary-container": "#878e94",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#f2dfd1",
+                    "on-secondary-fixed": "#291800",
+                    "tertiary-fixed-dim": "#c0c7ce",
+                    "tertiary-fixed": "#dce3ea",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#624000",
+                    "on-primary-fixed": "#231a11",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f8f2f0",
+                    "surface-dim": "#ded9d7",
+                    "surface-container": "#f2edeb",
+                    "on-primary-container": "#9a8a7e",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e7e1df"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "16px",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "section-padding": "120px",
+                    "gutter": "32px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["EB Garamond", "serif"],
+                    "display-lg": ["EB Garamond", "serif"],
+                    "body-lg": ["Manrope", "sans-serif"],
+                    "body-md": ["Manrope", "sans-serif"],
+                    "poetry-block": ["EB Garamond", "serif"],
+                    "label-caps": ["Manrope", "sans-serif"],
+                    "headline-lg": ["EB Garamond", "serif"],
+                    "headline-lg-mobile": ["EB Garamond", "serif"],
+                    "display-md": ["EB Garamond", "serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "poetry-block": ["22px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["36px", {"lineHeight": "44px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "display-md": ["48px", {"lineHeight": "56px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fef8f6;
+            color: #1d1b1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .parchment-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+        }
+        .editorial-shadow {
+            box-shadow: 0px 4px 20px rgba(46, 36, 27, 0.05);
+        }
+        .nav-scrolled {
+            background-color: #fef8f6 !important;
+            border-bottom: 1px solid #d0c4bc !important;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="parchment-texture font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 transition-colors duration-300 bg-transparent" id="top-nav">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center py-unit h-20">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight" href="index.html">
+                Poetry Garden
+            </a>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="events_master_redesign_poetry_garden.html">Events</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="artist_profile_redesigned_poetry_garden.html">Past Evenings</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed border-b border-primary hover:text-secondary transition-colors" href="about_poetry_garden.html">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors" href="contact_poetry_garden.html">Contact</a>
+</div>
+<a href="contact_poetry_garden.html" class="bg-primary text-on-primary px-6 py-2 rounded-sm font-label-caps text-label-caps uppercase tracking-widest active:scale-95 transition-transform inline-block">
+                Reserve Seat
+            </a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, low-angle shot of a classic heritage library in Mumbai with tall teak wood bookshelves reaching the ceiling. Golden morning sunlight filters through large arched windows, illuminating dust motes dancing in the air above an antique writing desk. The scene is captured in a premium editorial style with warm, earthy tones of deep browns and parchment creams, creating a scholarly and serene atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCz4qJMkedcfS1XPLYvvmg_-HEPQNB48fiT-5i4sDoDV4qR5olZa0Fzatwcy8WxczrXsTYlYTXmYcF5PeXpVZcRL24dx7_sdA94aUembquRU_ZUzN66jAkwZ62tT9cUwQEHebvIiE5BSX5spDyeSYUu9DEC5YZnc_BuYh23H7wBK780X-88ZOLgb5O0XTHS2bwgu4oV80l6TXaNfbuG4v_cuCmHIKFpjhYpl78rzL3TY6Cc_Bl_4lZrYw')"></div>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile">
+<p class="font-label-caps text-label-caps text-on-primary mb-6 uppercase tracking-[0.3em]">Our Story</p>
+<h1 class="font-display-lg text-display-lg text-on-primary mb-8 md:text-8xl">Where Words Meet the Heart</h1>
+<div class="w-24 h-px bg-on-primary/40 mx-auto"></div>
+</div>
+</header>
+<!-- Mission & Vision Section -->
+<section class="py-section-padding max-w-container-max mx-auto px-margin-desktop">
+<div class="grid md:grid-cols-2 gap-24 items-center">
+<div class="space-y-12">
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Heritage &amp; Narrative</span>
+<h2 class="font-display-md text-display-md">The Story of Poetry Garden</h2>
+</div>
+<p class="font-poetry-block text-poetry-block text-on-surface-variant leading-relaxed italic border-l-2 border-outline-variant pl-8 py-2">
+                    "We didn't just build a stage; we cultivated a soil where whispers could become roars, and fragile verses could find strength in community."
+                </p>
+<div class="font-body-lg text-body-lg text-on-surface-variant space-y-6">
+<p>Founded in the quiet corners of Mumbai's cultural heart, Poetry Garden began as a small gathering of three dreamers with dog-eared journals. It was born from a simple realization: in a world moving too fast, we needed a place to slow down and listen.</p>
+<p>Today, it has evolved into a sanctuary for storytellers, poets, and thinkers—a living manuscript where every evening adds a new chapter to our collective memory.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 h-[600px]">
+<div class="rounded-lg bg-cover bg-center w-full h-full shadow-lg translate-y-12" data-alt="Close-up detail of a vintage fountain pen resting on a handwritten manuscript page with elegant Hindi calligraphy. The paper has a delicate texture and warm cream tone, lit by soft, natural side-lighting. The focus is sharp on the metallic nib of the pen, while the background falls into a soft blur of a cozy study environment with rich wood textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcLvcIC2tgExTBlD1T-Ak6qwIecuMWMkdhKV9Ki9KL8pgtph9jVCE9hflhn_TZUyYNOmRzZjHK_J5owXqpuaJ4yoJg0Y8Yiy5QQ99gr9mOzzt6zOSLwK1wkc3MZkkIFFKJCTAsVSpMGq41VpISnuUhtaasNFNMMg2ZYrB6cBCqCH9YT-sw7sKkMlOaq-VG3Xa6WJ7SCH1crf2Jjrq4jozCETKcBuwUhnCSl0bVjmw4D9txrEbf4H3DBA')"></div>
+<div class="rounded-lg bg-cover bg-center w-full h-full shadow-lg -translate-y-12" data-alt="A candid, warm-toned photograph of a diverse group of people sitting on floor cushions in a dimly lit, atmospheric café. They are listening intently to an invisible speaker, with expressions of emotional resonance and reflection. The lighting is intimate, with soft candlelight and warm incandescent bulbs reflecting in their eyes, capturing a moment of deep community connection." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhla48VijU2xcWD8gAtBlLeDI444CZ9Gbt32oogGh40Z3wjoRtL7qZ2ZYXzoLgEl6ap0Xqx-tBuD3NxarGXzH4JET87BMHIDaeDtleCDMZDPDz2wCrXWQZGjyFgi6djyamhoAJtEIu9Udv86LwRZVtgjdkXwa-qsWlpGqcutzMMpnPD1Ve_x_nt8UfYPcTmhm7eCTeyPb-XG_aMojcLVYL0LgOoG5ebs8LLw7tDiVQCAZzrfvsl0TChw')"></div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision Cards (Bento Style) -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 bg-surface-container-lowest p-12 rounded-lg border border-outline-variant/30 editorial-shadow flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-4">Our Purpose</span>
+<h3 class="font-headline-lg text-headline-lg mb-6">The Mission</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">To preserve the sanctity of the written and spoken word by providing an elevated, intimate platform for authentic expression. We aim to bridge the gap between traditional literary heritage and modern storytelling through curated experiences that provoke thought and evoke emotion.</p>
+</div>
+<div class="md:col-span-5 relative overflow-hidden rounded-lg group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A wide-angle artistic shot of an antique microphone standing alone on a small wooden stage. A single spotlight creates a sharp circular glow on the floor around it, cutting through the dark, moody background. Wisps of atmospheric haze catch the light, creating a dramatic, expectant mood that signifies the power of individual voice and performance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDer7x2EUrgK9PW8MgABUTv2RiMklfmC5XVEIYooy5P5hIB14IhSxKGLr6HqmmQWoWKqQ5BhNq832g5dNuDUJ5iV-TzKV8qpcYmuGABlh8hIjZVPZe2tk369rp2BOAOxVCzEEyF07JuVefvEbmBke5tVFQlKwv-Qg0z6oMgRABszH6PgsuUbi0BG11W4S2KEJ2CiXuARZ5WxASIpDw93xN3UwH2PnhOMrbauzUgHviPI6ZkBTsHyC8ljw')"></div>
+<div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors"></div>
+<div class="relative h-full p-12 flex flex-col justify-end text-on-primary">
+<span class="font-label-caps text-label-caps mb-2 text-secondary-fixed">The Vision</span>
+<h3 class="font-headline-lg text-headline-lg">To be the global hearth where the world's diverse poetic souls find home.</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Founder Message -->
+<section class="py-section-padding overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="relative flex flex-col md:flex-row items-center gap-24">
+<div class="w-full md:w-1/3">
+<div class="relative">
+<div class="absolute -inset-4 border border-outline-variant rounded-lg -z-10"></div>
+<div class="aspect-[4/5] bg-cover bg-center rounded-lg grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional editorial portrait of a woman in her late 30s with a kind, soulful expression. She is wearing a traditional Indian cotton saree in muted earthy tones, sitting in a room filled with books and antique literary artifacts. Her hands are gently folded, and she looks slightly away from the camera with a thoughtful smile. The lighting is soft and flattering, emphasizing her role as a visionary founder." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYGHoKfUng1mxV8DLqpdOuDmwukZIuwyXwLDZsVc3J98qom-Y6vZHaNu0KfcrMwFjWCAxMERV4mGoFcjnQCO2ktgSQHf1V9aMsu6OnDN9GO6Jk5EjeEoKMSc2OD6l_acW5SUrtEqFtaMfS__w3rxibWbS83Uh67VVR7t4e8T2iLtUN_hO8MLFeYSAMGwinq88lsiB85leHeo4eC5Ftf7OrQ0E45bq-B0hNT3O2U8zQAccFIJuLXsP_-w')"></div>
+</div>
+</div>
+<div class="w-full md:w-2/3 space-y-8">
+<div class="flex items-center gap-4">
+<span class="w-12 h-px bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">A Word from our Founder</span>
+</div>
+<h2 class="font-display-md text-display-md">"Poetry is the shortest distance between two hearts."</h2>
+<div class="font-body-lg text-body-lg text-on-surface-variant space-y-6">
+<p>Poetry Garden was never meant to be an 'industry'. It was meant to be an invitation. I remember sitting in my balcony during a rainy Mumbai evening, reading a poem that changed me, and wishing I had someone to share that weight with.</p>
+<p>This community is my response to that wish. We prioritize the 'slow interaction'—the kind that leaves you feeling more human, less processed. Thank you for being a verse in this ongoing poem.</p>
+</div>
+<div class="pt-4">
+<p class="font-headline-md text-headline-md">Manu Vaishali</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Founder &amp; Curator</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Evolution Timeline -->
+<section class="py-section-padding bg-primary text-on-primary overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-secondary-fixed uppercase tracking-widest block mb-4">The Evolution</span>
+<h2 class="font-display-md text-display-md">Chapters of our Journey</h2>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-on-primary/20 hidden md:block"></div>
+<div class="space-y-32">
+<!-- Event 1 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-[45%] text-right hidden md:block">
+<h4 class="font-headline-md text-headline-md text-secondary-fixed">The First Evening</h4>
+<p class="font-body-md text-on-primary-container mt-2">A small café in Bandra hosts 12 poets for our first 'Manuscript' evening.</p>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-primary z-10 hidden md:block"></div>
+<div class="md:w-[45%]">
+<span class="font-display-md text-display-md text-on-primary/10 block mb-2">2018</span>
+<div class="md:hidden">
+<h4 class="font-headline-md text-headline-md text-secondary-fixed">The First Evening</h4>
+<p class="font-body-md text-on-primary-container mt-2">A small café in Bandra hosts 12 poets for our first 'Manuscript' evening.</p>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between">
+<div class="md:w-[45%] text-left hidden md:block">
+<h4 class="font-headline-md text-headline-md text-secondary-fixed">Going Digital</h4>
+<p class="font-body-md text-on-primary-container mt-2">Launching our online journal, reaching voices from across the globe during the quiet years.</p>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-primary z-10 hidden md:block"></div>
+<div class="md:w-[45%] md:text-right">
+<span class="font-display-md text-display-md text-on-primary/10 block mb-2">2020</span>
+<div class="md:hidden">
+<h4 class="font-headline-md text-headline-md text-secondary-fixed">Going Digital</h4>
+<p class="font-body-md text-on-primary-container mt-2">Launching our online journal, reaching voices from across the globe during the quiet years.</p>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-[45%] text-right hidden md:block">
+<h4 class="font-headline-md text-headline-md text-secondary-fixed">The Heritage Tour</h4>
+<p class="font-body-md text-on-primary-container mt-2">Hosting poetry nights in historical libraries and heritage sites across India.</p>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-primary z-10 hidden md:block"></div>
+<div class="md:w-[45%]">
+<span class="font-display-md text-display-md text-on-primary/10 block mb-2">2023</span>
+<div class="md:hidden">
+<h4 class="font-headline-md text-headline-md text-secondary-fixed">The Heritage Tour</h4>
+<p class="font-body-md text-on-primary-container mt-2">Hosting poetry nights in historical libraries and heritage sites across India.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-section-padding">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-display-md text-display-md mb-24">The Ink we write with</h2>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="space-y-6 group">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mx-auto transition-transform duration-500 group-hover:-rotate-12">
+<span class="material-symbols-outlined text-secondary text-3xl">edit_note</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Words</h3>
+<p class="font-body-md text-on-surface-variant">We believe in the precision of language and the power of a perfectly placed metaphor to shift perspectives.</p>
+</div>
+<div class="space-y-6 group">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mx-auto transition-transform duration-500 group-hover:scale-110">
+<span class="material-symbols-outlined text-secondary text-3xl">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Emotions</h3>
+<p class="font-body-md text-on-surface-variant">Vulnerability is our strength. We create a brave space for the rawest, most human parts of our stories.</p>
+</div>
+<div class="space-y-6 group">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mx-auto transition-transform duration-500 group-hover:rotate-12">
+<span class="material-symbols-outlined text-secondary text-3xl">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Community</h3>
+<p class="font-body-md text-on-surface-variant">Art thrives in fellowship. We are more than just listeners; we are a collective of souls holding space for each other.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Imagery Gallery (Full-width Artistic) -->
+<section class="h-screen flex">
+<div class="w-1/3 relative group overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110" data-alt="A top-down aesthetic flatlay of open vintage books, dried botanical flowers, and a steaming cup of coffee on a weathered wooden surface. The composition is artistic and editorial, with soft morning light casting long shadows. The color palette consists of warm browns, sepia, and muted greens, evoking a sense of peaceful morning reading." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1X2JxJZRctPC57ReOverlArDzEDOLVZHsU7sciRR5ARNXwawi7PkeCGrLtMQoDfCIabkdPqkh9HcEj8P0WYEs2cQ32DPt9_mLUvbJCjoVQmod7jCEDXJu4HJHyJt0YEA2IkzSWmyO5y1BOsj27Vl3nQZap6xKV9riQBwLMiVr91WGvUWuqeq5FR8eUmZ4LkIgOai5mls5lE3Xw7mi2x6FSNSuIAdEQdDMX8tENUJs4ahDygaT0pO6tg')"></div>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="w-1/3 relative group overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" data-alt="A moody, high-contrast shot of a vintage typewriter sitting on a desk by a window during a rainstorm. Raindrops are visible on the windowpane in the foreground, blurred into soft bokeh circles. The light is dim and cool, focusing on the mechanical beauty of the typewriter keys. The mood is contemplative and evocative of a writer's solitary creative process." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuQ8cuVaNzV4MQ0LFQIeaC4hE3p3fD3-vUs_MFuJsAEeGxX69FirD1hCRDKg1FrA7UfBZceODwRF-071teHtsGtfhPUZ81FNTQfqV2HkoTDRzlNz5r1WTzevcdnI0Hj4GGbxFbekEuYvg2DKqOKQU2us_yhFXkgMtZ4WVUkbf9104TWkUDFbgyUNSYxwTCIXRH0LVgUmpXfI0jUAqEXmOQfOo9ehxyQjyydYBWwQdtG5rL2BLhuPouEw')"></div>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="w-1/3 relative group overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110" data-alt="An atmospheric, close-up shot of a singer-songwriter at a microphone in a dimly lit club. Their hands are wrapped around a classic condenser microphone, and the warm stage lighting highlights the silhouette of their face and the texture of their clothing. The background is a blur of warm lights and audience shadows, capturing the intensity of a live spoken word or musical performance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3uzO_T__TEpBQ6V4VnEWdoWxJPfoAGX4aI97W_1iebaSXD8Co8EaIYrwNfMBLtcdlKHw2HtwR8wNc4meWBFg4T-sjdq39TNODIGJmM201INSNkEYt2io3g8i0fwVZo5TXGt-O_wSasfNQO1lo98hlRC3vxiqznWbrh55ycvLgc09EeyB-7vryOmH6x3c_P2zJtqrTXW16mRQ6DiyVWI-PfnqKf7ekfKZPNqhwk1SBJtPMyN3vFOOU9w')"></div>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-6 max-w-xs">
+<a class="font-headline-lg text-headline-lg text-primary" href="index.html">Poetry Garden</a>
+<p class="text-on-surface-variant font-body-md">Cultivating the art of the spoken word in Mumbai and beyond. A refuge for readers, writers, and dreamers.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="contact_poetry_garden.html">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="contact_poetry_garden.html">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Explore</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="events_master_redesign_poetry_garden.html">Our Events</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="artist_profile_redesigned_poetry_garden.html">Past Nights</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="artist_profile_redesigned_poetry_garden.html">The Gardeners</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Community</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Membership</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Volunteer</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Partner With Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Info</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Privacy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Terms</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30 text-center md:text-left">
+<span class="font-body-md text-on-surface-variant opacity-70">© 2024 Poetry Garden. All rights reserved.</span>
+</div>
+</footer>
+<script>
+        // Simple scroll behavior for navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('top-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('nav-scrolled', 'editorial-shadow');
+            } else {
+                nav.classList.remove('nav-scrolled', 'editorial-shadow');
+            }
+        });
+
+        // Simple fade-in effect for sections on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

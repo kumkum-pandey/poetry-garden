@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Poetry Garden - Admin Bookings Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#695c51",
+                        "surface-container": "#f2edeb",
+                        "primary": "#180f08",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#20272c",
+                        "on-primary-container": "#9a8a7e",
+                        "primary-fixed-dim": "#d5c3b6",
+                        "outline": "#7f756e",
+                        "primary-fixed": "#f2dfd1",
+                        "on-tertiary-fixed-variant": "#41484d",
+                        "tertiary-fixed": "#dce3ea",
+                        "on-tertiary-container": "#878e94",
+                        "tertiary": "#0b1217",
+                        "secondary-fixed": "#ffddb1",
+                        "on-tertiary-fixed": "#151c21",
+                        "tertiary-fixed-dim": "#c0c7ce",
+                        "on-secondary-fixed": "#291800",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#51453a",
+                        "background": "#fef8f6",
+                        "inverse-on-surface": "#f5f0ed",
+                        "on-secondary-container": "#78520f",
+                        "surface-container-high": "#ede7e5",
+                        "surface-variant": "#e7e1df",
+                        "on-surface-variant": "#4d453f",
+                        "outline-variant": "#d0c4bc",
+                        "on-primary-fixed": "#231a11",
+                        "on-secondary-fixed-variant": "#624000",
+                        "surface-container-highest": "#e7e1df",
+                        "surface": "#fef8f6",
+                        "inverse-surface": "#32302f",
+                        "surface-dim": "#ded9d7",
+                        "surface-container-low": "#f8f2f0",
+                        "secondary-container": "#fec97c",
+                        "inverse-primary": "#d5c3b6",
+                        "on-surface": "#1d1b1a",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2e241b",
+                        "secondary": "#7e5714",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fef8f6",
+                        "on-background": "#1d1b1a",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#f2be72",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "section-padding": "120px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond", "serif"],
+                        "headline-lg": ["EB Garamond", "serif"],
+                        "poetry-block": ["EB Garamond", "serif"],
+                        "display-md": ["EB Garamond", "serif"],
+                        "display-lg": ["EB Garamond", "serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "label-caps": ["Manrope", "sans-serif"],
+                        "headline-lg-mobile": ["EB Garamond", "serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-lg": ["36px", { "lineHeight": "44px", "fontWeight": "500" }],
+                        "poetry-block": ["22px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "display-md": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F7F1E7; /* The Parchment */
+            color: #180f08;
+        }
+        .surface-card {
+            background-color: #FFF9F2;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- Admin Sidebar (Custom component for Admin context) -->
+<aside class="hidden md:flex flex-col w-64 bg-surface-container-low border-r border-outline-variant/50 sticky top-0 h-screen py-8 px-6">
+<div class="mb-12">
+<a class="font-headline-md text-headline-md text-primary tracking-tight block" href="../index.html">Poetry Garden</a>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">Administration</p>
+</div>
+<nav class="flex flex-col space-y-2 flex-grow">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-md text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="admin_dashboard_poetry_garden.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-md bg-primary-container text-on-primary-container transition-colors" href="admin_bookings_manager.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">book_online</span>
+<span class="font-body-md text-body-md font-medium">Bookings</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-md text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="admin_events_management.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">event</span>
+<span class="font-body-md text-body-md">Events</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-md text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="admin_artist_directory.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>
+<span class="font-body-md text-body-md">Artists</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-md text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="admin_journal_management.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">edit_document</span>
+<span class="font-body-md text-body-md">Journal</span>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-md text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="../index.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+<span class="font-body-md text-body-md">View Site / Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop overflow-y-auto">
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+<div>
+<h2 class="font-display-md text-display-md text-primary mb-2">Bookings Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Review and manage upcoming event reservations and private artist sessions.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 border border-primary text-secondary bg-transparent rounded hover:bg-surface-variant/30 transition-colors font-label-caps text-label-caps uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export CSV
+                </button>
+<button class="px-6 py-3 bg-primary text-on-primary rounded hover:bg-primary/90 transition-colors font-label-caps text-label-caps uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Manual Booking
+                </button>
+</div>
+</header>
+<!-- Summary Bar (Bento style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="surface-card p-8 rounded-lg border border-outline-variant/30 shadow-[0px_4px_20px_rgba(46,36,27,0.05)]">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Total Revenue</h3>
+<span class="material-symbols-outlined text-secondary">payments</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary">$24,500</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">+12% from last month</p>
+</div>
+<div class="surface-card p-8 rounded-lg border border-outline-variant/30 shadow-[0px_4px_20px_rgba(46,36,27,0.05)]">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Pending Requests</h3>
+<span class="material-symbols-outlined text-secondary">hourglass_empty</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary">18</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">Requires attention</p>
+</div>
+<div class="surface-card p-8 rounded-lg border border-outline-variant/30 shadow-[0px_4px_20px_rgba(46,36,27,0.05)]">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Upcoming Events</h3>
+<span class="material-symbols-outlined text-secondary">event_upcoming</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary">5</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">Next 7 days</p>
+</div>
+</section>
+<!-- Bookings List -->
+<section class="surface-card rounded-lg border border-outline-variant/30 shadow-[0px_4px_20px_rgba(46,36,27,0.05)] overflow-hidden">
+<!-- Filters & Search -->
+<div class="p-6 border-b border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-low/50">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 transition-colors font-body-md text-body-md text-primary placeholder-on-surface-variant outline-none" placeholder="Search by ID, Name, or Event..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+<button class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap">All Bookings</button>
+<button class="px-4 py-2 border border-outline-variant/50 text-on-surface-variant hover:bg-surface-variant/30 rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap">Pending (18)</button>
+<button class="px-4 py-2 border border-outline-variant/50 text-on-surface-variant hover:bg-surface-variant/30 rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap">Confirmed</button>
+<button class="px-4 py-2 border border-outline-variant/50 text-on-surface-variant hover:bg-surface-variant/30 rounded-full font-label-caps text-label-caps uppercase whitespace-nowrap">Cancelled</button>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30 bg-surface-container-low/30">
+<th class="p-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Booking ID</th>
+<th class="p-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Customer</th>
+<th class="p-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Event / Artist</th>
+<th class="p-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Date</th>
+<th class="p-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Amount</th>
+<th class="p-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Status</th>
+<th class="p-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<!-- Row 1 (Pending) -->
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low/20 transition-colors">
+<td class="p-6 font-medium text-primary">#PG-8042</td>
+<td class="p-6 text-on-surface">Eleanor Vance</td>
+<td class="p-6 text-on-surface">Evening of Haiku</td>
+<td class="p-6 text-on-surface-variant">Oct 24, 2024</td>
+<td class="p-6 text-on-surface">$120.00</td>
+<td class="p-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-fixed/50 text-secondary border border-secondary/20 font-label-caps text-label-caps uppercase">
+<span class="w-2 h-2 rounded-full bg-secondary mr-2"></span>Pending
+                                </span>
+</td>
+<td class="p-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 (Confirmed) -->
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low/20 transition-colors">
+<td class="p-6 font-medium text-primary">#PG-8041</td>
+<td class="p-6 text-on-surface">Julian Blackwood</td>
+<td class="p-6 text-on-surface">Private Reading: R. Tagore</td>
+<td class="p-6 text-on-surface-variant">Oct 26, 2024</td>
+<td class="p-6 text-on-surface">$450.00</td>
+<td class="p-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high text-primary border border-outline-variant/50 font-label-caps text-label-caps uppercase">
+<span class="w-2 h-2 rounded-full bg-primary mr-2"></span>Confirmed
+                                </span>
+</td>
+<td class="p-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 (Cancelled) -->
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low/20 transition-colors">
+<td class="p-6 font-medium text-primary">#PG-8039</td>
+<td class="p-6 text-on-surface line-through text-on-surface-variant">Sarah Jenkins</td>
+<td class="p-6 text-on-surface line-through text-on-surface-variant">Spoken Word Open Mic</td>
+<td class="p-6 text-on-surface-variant line-through">Oct 20, 2024</td>
+<td class="p-6 text-on-surface line-through text-on-surface-variant">$25.00</td>
+<td class="p-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-error-container/30 text-error border border-error/20 font-label-caps text-label-caps uppercase">
+<span class="w-2 h-2 rounded-full bg-error mr-2"></span>Cancelled
+                                </span>
+</td>
+<td class="p-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 (Confirmed) -->
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low/20 transition-colors">
+<td class="p-6 font-medium text-primary">#PG-8038</td>
+<td class="p-6 text-on-surface">Arthur Pendelton</td>
+<td class="p-6 text-on-surface">Evening of Haiku</td>
+<td class="p-6 text-on-surface-variant">Oct 24, 2024</td>
+<td class="p-6 text-on-surface">$120.00</td>
+<td class="p-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high text-primary border border-outline-variant/50 font-label-caps text-label-caps uppercase">
+<span class="w-2 h-2 rounded-full bg-primary mr-2"></span>Confirmed
+                                </span>
+</td>
+<td class="p-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-6 border-t border-outline-variant/30 flex justify-between items-center bg-surface-container-low/30">
+<span class="font-body-md text-body-md text-on-surface-variant">Showing 1 to 4 of 128 bookings</span>
+<div class="flex gap-2">
+<button class="p-2 rounded border border-outline-variant/50 text-on-surface-variant hover:bg-surface-variant/50 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="px-4 py-2 rounded bg-primary text-on-primary font-body-md">1</button>
+<button class="px-4 py-2 rounded border border-outline-variant/50 text-on-surface-variant hover:bg-surface-variant/50 font-body-md">2</button>
+<button class="px-4 py-2 rounded border border-outline-variant/50 text-on-surface-variant hover:bg-surface-variant/50 font-body-md">3</button>
+<span class="px-2 py-2 text-on-surface-variant">...</span>
+<button class="p-2 rounded border border-outline-variant/50 text-on-surface-variant hover:bg-surface-variant/50">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Poetry Garden - Journal Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#695c51",
+                    "surface-container": "#f2edeb",
+                    "primary": "#180f08",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#20272c",
+                    "on-primary-container": "#9a8a7e",
+                    "primary-fixed-dim": "#d5c3b6",
+                    "outline": "#7f756e",
+                    "primary-fixed": "#f2dfd1",
+                    "on-tertiary-fixed-variant": "#41484d",
+                    "tertiary-fixed": "#dce3ea",
+                    "on-tertiary-container": "#878e94",
+                    "tertiary": "#0b1217",
+                    "secondary-fixed": "#ffddb1",
+                    "on-tertiary-fixed": "#151c21",
+                    "tertiary-fixed-dim": "#c0c7ce",
+                    "on-secondary-fixed": "#291800",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#51453a",
+                    "background": "#fef8f6",
+                    "inverse-on-surface": "#f5f0ed",
+                    "on-secondary-container": "#78520f",
+                    "surface-container-high": "#ede7e5",
+                    "surface-variant": "#e7e1df",
+                    "on-surface-variant": "#4d453f",
+                    "outline-variant": "#d0c4bc",
+                    "on-primary-fixed": "#231a11",
+                    "on-secondary-fixed-variant": "#624000",
+                    "surface-container-highest": "#e7e1df",
+                    "surface": "#fef8f6",
+                    "inverse-surface": "#32302f",
+                    "surface-dim": "#ded9d7",
+                    "surface-container-low": "#f8f2f0",
+                    "secondary-container": "#fec97c",
+                    "inverse-primary": "#d5c3b6",
+                    "on-surface": "#1d1b1a",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#2e241b",
+                    "secondary": "#7e5714",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fef8f6",
+                    "on-background": "#1d1b1a",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#f2be72",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "section-padding": "120px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "ebGaramond"
+                    ],
+                    "headline-lg": [
+                            "ebGaramond"
+                    ],
+                    "poetry-block": [
+                            "ebGaramond"
+                    ],
+                    "display-md": [
+                            "ebGaramond"
+                    ],
+                    "display-lg": [
+                            "ebGaramond"
+                    ],
+                    "body-lg": [
+                            "manrope"
+                    ],
+                    "body-md": [
+                            "manrope"
+                    ],
+                    "label-caps": [
+                            "manrope"
+                    ],
+                    "headline-lg-mobile": [
+                            "ebGaramond"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "poetry-block": [
+                            "22px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-md": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "26px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F7F1E7; /* The Parchment */
+            color: #1d1b1a; /* on-background */
+        }
+        .surface-card {
+            background-color: #FFF9F2;
+            border: 1px solid #DED2BF;
+        }
+        .botanical-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 C 60 40, 90 50, 90 50 C 90 50, 60 60, 50 90 C 40 60, 10 50, 10 50 C 10 50, 40 40, 50 10 Z' fill='none' stroke='%23695c51' stroke-width='0.5' stroke-dasharray='2 4' opacity='0.2'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+<!-- Admin Sidebar -->
+<aside class="w-64 border-r border-outline-variant/30 flex flex-col surface-card h-full flex-shrink-0 z-20 shadow-[4px_0_24px_rgba(46,36,27,0.02)]">
+<div class="p-8 border-b border-outline-variant/30">
+<a class="font-headline-md text-headline-md text-primary block" href="../index.html">Poetry Garden</a>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Admin Sanctuary</p>
+</div>
+<nav class="flex-1 py-8 px-4 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-secondary transition-colors group" href="admin_dashboard_poetry_garden.html">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-secondary transition-colors group" href="admin_events_management.html">
+<span class="material-symbols-outlined text-[20px]">event</span>
+<span class="font-label-caps text-label-caps">Events</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-secondary transition-colors group" href="admin_artist_directory.html">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-caps text-label-caps">Artists</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-secondary transition-colors group" href="admin_bookings_manager.html">
+<span class="material-symbols-outlined text-[20px]">book_online</span>
+<span class="font-label-caps text-label-caps">Bookings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-surface-container-low text-primary border border-outline-variant/50 group relative" href="admin_journal_management.html">
+<!-- Active Indicator -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-secondary rounded-r"></div>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">ink_pen</span>
+<span class="font-label-caps text-label-caps">The Journal</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-secondary transition-colors group" href="../index.html">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+<span class="font-label-caps text-label-caps">View Public Site</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-3 px-4 py-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, circular avatar portrait of a distinguished editor in a literary setting. Warm lighting, sepia undertones, wearing round glasses. Premium editorial aesthetic, sharp focus on the face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm_79tpHjEC6vOILbxvF2lss2rRQd9wpI0ICtz6S4fsHcsr8BDM5qWk-2TPa0oWiQP9wZASd6qbczoZOlN4O7FRqMKD4DZuHWcHP_KB1ETUxQWm7LukNSd_aMf5Eo8tTpCuCFB-90s7OrD26kWhXHBO7SP6o5oKVnfoow4806CxsHRp5LrLK8lSQi63TAJE1TPPWZmW-7VeG0xFXSTrSznEU2zLwHowBx9uRHnarhY1Ag83C66ZdtAfw"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-primary">E. Wharton</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">Chief Editor</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative botanical-bg">
+<!-- Header -->
+<header class="h-24 flex items-center justify-between px-10 border-b border-outline-variant/30 flex-shrink-0 z-10 bg-[#F7F1E7]/90 backdrop-blur-sm">
+<div>
+<h2 class="font-display-md text-display-md text-primary">The Garden Journal</h2>
+<p class="font-body-md text-body-md text-surface-tint">Curating thoughts, essays, and reflections.</p>
+</div>
+<button class="bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-4 rounded hover:bg-secondary transition-colors flex items-center gap-2 shadow-[0px_4px_20px_rgba(46,36,27,0.1)]">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+                Write New Entry
+            </button>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-10 space-y-8">
+<!-- Grid Layout: Preview + List -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 max-w-[1400px] mx-auto">
+<!-- Left Column: Articles List (Bento Grid Style) -->
+<div class="xl:col-span-7 space-y-6 flex flex-col h-[calc(100vh-12rem)]">
+<!-- Filters/Search -->
+<div class="flex justify-between items-end pb-4 border-b border-outline-variant/50">
+<div class="flex gap-4">
+<button class="font-label-caps text-label-caps text-primary border-b-2 border-secondary pb-2">All Entries</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-2">Drafts (3)</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-2">Published</button>
+</div>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-0 bottom-2 text-outline text-[18px]">search</span>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 pl-8 pb-2 focus:ring-0 focus:border-secondary font-body-md text-body-md text-primary placeholder:text-outline/70" placeholder="Search journal..." type="text"/>
+</div>
+</div>
+<!-- Entries List -->
+<div class="flex-1 overflow-y-auto pr-4 space-y-4">
+<!-- Entry Item 1 (Selected/Active) -->
+<div class="surface-card rounded-lg p-6 flex flex-col gap-4 border-secondary/50 shadow-[0px_4px_20px_rgba(46,36,27,0.05)] cursor-pointer relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-start">
+<span class="bg-secondary-fixed/50 text-secondary font-label-caps text-[10px] px-2 py-1 rounded-full uppercase tracking-widest">Published</span>
+<span class="font-label-caps text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 1,204</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 group-hover:text-secondary transition-colors">The Architecture of Silence in Modern Verse</h3>
+<p class="font-body-md text-body-md text-surface-tint line-clamp-2">An exploration of white space and pauses in contemporary poetry, arguing that what remains unsaid holds as much weight as the inked words.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-outline-variant/20">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Small avatar of a female writer with dark hair, looking thoughtful. Warm, literary aesthetic, sepia tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAll3jzWAGyN3JPHAOazb5S7PM-1ZajvzRvhb-rliHcE0pVhaX3XCXV7APQrHlZ83n0zd81oqvPfzD1BR7FnOdF4ERBePYpSky6hDaUFsG3OTMrNL-zA1caGtXzI-DegW15sLkdD9E1rJZ_oWMFy5Gn6N26JX6Ndl_cXV4MskGTGT5IB3inGzm2YR4boDKvDnCbum4Hl5dzpqSLE-OAYBt8MWDrgSbIQFmQxkXSfdfFZnK9OLdWuSd-CQ"/>
+</div>
+<span class="font-label-caps text-primary text-[11px]">E. Wharton</span>
+</div>
+<span class="font-label-caps text-on-surface-variant text-[11px]">Oct 24, 2024</span>
+</div>
+</div>
+<!-- Entry Item 2 -->
+<div class="surface-card rounded-lg p-6 flex flex-col gap-4 border-transparent hover:border-outline-variant/50 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<span class="bg-surface-variant text-on-surface-variant font-label-caps text-[10px] px-2 py-1 rounded-full uppercase tracking-widest">Draft</span>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 group-hover:text-secondary transition-colors">Autumn Leaves: A Haiku Collection Review</h3>
+<p class="font-body-md text-body-md text-surface-tint line-clamp-2">Reviewing the latest compilation from the Kyoto collective, focusing on thematic elements of decay and rebirth.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-outline-variant/20">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Small avatar of a male writer with a beard, wearing a tweed jacket. Warm, literary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDieJ9pP4dBSWpzo_OcWkIYsd2d8FynuBCXhng2eUXgpTVHchufEZT3TOMz2xQ1_Fsm3pvdGm2uPrXwMFW1TsFkLG5w5_Ity3MH7xJPul99xuVRQe65ewisSvnuuMw0C_0ppcBddZjfdJCt5e9joOrfsE9PlPPOgkVv-hNmfalrwZMxc7zU0HcUWfmlNivItdUEsLq5KwUU0ikE3Uk2TJ7PmTJj59OMvNA7k1BIb2gDHBXCruZMQ1lUaw"/>
+</div>
+<span class="font-label-caps text-primary text-[11px]">J. Keats</span>
+</div>
+<span class="font-label-caps text-on-surface-variant text-[11px]">Last edited: 2 hrs ago</span>
+</div>
+</div>
+<!-- Entry Item 3 -->
+<div class="surface-card rounded-lg p-6 flex flex-col gap-4 border-transparent hover:border-outline-variant/50 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<span class="bg-secondary-fixed/50 text-secondary font-label-caps text-[10px] px-2 py-1 rounded-full uppercase tracking-widest">Published</span>
+<span class="font-label-caps text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 856</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 group-hover:text-secondary transition-colors">On Finding the Muse in Urban Landscapes</h3>
+<p class="font-body-md text-body-md text-surface-tint line-clamp-2">Nature is not the only source of inspiration. How the rhythm of the city translates into poetic meter.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-outline-variant/20">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Small avatar of a female writer, modern glasses, urban background slightly blurred. Literary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUGmX94GCm7xRIm8mPX79s6sKZQMGJvpMsN2O8xTS7XpBx5qHExcEUmgsMz84nk1sMMyANLMLAFhkYOMN1tkaDR4d38lt-5pzEQEt8_jfWTvMjdmLFxDvqI4Be3-_km2VklHmRgJx3X7QZnNNf_XoriEuG2XKV2XW--x2MoU3WPzl0dAOsxwS5jTtFq5VSkvzuIF1h7g9NgbIiv5W6qQckXfb7j3d0UDDQkp2RGLt7Z-KXRHqwFKD1Zg"/>
+</div>
+<span class="font-label-caps text-primary text-[11px]">M. Angelou</span>
+</div>
+<span class="font-label-caps text-on-surface-variant text-[11px]">Oct 18, 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Live Preview Area (Glassmorphism/Manuscript feel) -->
+<div class="xl:col-span-5 h-[calc(100vh-12rem)] flex flex-col">
+<div class="flex items-center justify-between mb-4 px-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Live Preview</span>
+<div class="flex gap-2">
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[20px]">desktop_windows</span></button>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[20px]">smartphone</span></button>
+</div>
+</div>
+<div class="flex-1 surface-card rounded-lg overflow-y-auto shadow-[0px_8px_30px_rgba(46,36,27,0.08)] border-outline-variant/30 p-8 relative">
+<!-- Content Canvas Simulation -->
+<article class="max-w-prose mx-auto">
+<!-- Hero Image placeholder -->
+<div class="w-full h-48 mb-8 rounded bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<div class="w-full h-full bg-cover bg-center" data-alt="A moody, atmospheric photograph of an old typewriter sitting on a wooden desk. Natural light streaming through a dusty window. Sepia and warm brown tones. Literary editorial style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2aRO72tQ10FqY-9ppZ0c_IBez8OqQQCCQvhgp4c8LlPwN0YLOq9kJ55Ul0RHiBMrFRX4R53jRCXESvab4_DPHAy7Kl_pd5zgTDxrzlZ3nIdc2kUTMY40O5888DnK1orLGk92qwNy4sr9b13NN_9puQg_P7sj04GyJWK0hZQQWrj3_Is8kk9xbeoW-b6SDLfzAgiytDt__YNRX18Bw6NRaiRUYowZekeNBMQcnTQ_S_VqLb2mhehox_g')"></div>
+</div>
+<header class="mb-8 text-center border-b border-outline-variant/30 pb-8">
+<h1 class="font-display-md text-display-md text-primary mb-4">The Architecture of Silence in Modern Verse</h1>
+<div class="flex items-center justify-center gap-4 text-on-surface-variant">
+<span class="font-label-caps text-label-caps">By E. Wharton</span>
+<span>·</span>
+<span class="font-label-caps text-label-caps">Oct 24, 2024</span>
+</div>
+</header>
+<div class="font-poetry-block text-poetry-block text-surface-tint space-y-6">
+<p class="first-letter:text-5xl first-letter:font-headline-lg first-letter:text-primary first-letter:mr-1 first-letter:float-left">I</p>
+<p>n the realm of contemporary poetry, the space between the words is often where the true resonance lies. We are accustomed to filling every void with sound, with ink, with meaning. Yet, the deliberate pause—the caesura—forces the reader to stop, to breathe, and to confront the void.</p>
+<p>Consider the physical layout of a poem on the page. It is not merely text; it is a visual composition. The margins are walls, and the stanzas are rooms. When a poet leaves a large expanse of white paper bare, they are constructing a cathedral of silence.</p>
+<blockquote class="border-l-2 border-secondary pl-6 italic my-8 font-headline-md text-headline-md text-primary">
+                                     "It is the space between the notes that makes the music."
+                                 </blockquote>
+<p>This architectural approach to verse demands restraint from the author and patience from the reader. It is a slow art, requiring a deceleration of the mind to appreciate the structure built not just with language, but with its absence.</p>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manage Events - Poetry Garden Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#695c51",
+                        "surface-container": "#f2edeb",
+                        "primary": "#180f08",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#20272c",
+                        "on-primary-container": "#9a8a7e",
+                        "primary-fixed-dim": "#d5c3b6",
+                        "outline": "#7f756e",
+                        "primary-fixed": "#f2dfd1",
+                        "on-tertiary-fixed-variant": "#41484d",
+                        "tertiary-fixed": "#dce3ea",
+                        "on-tertiary-container": "#878e94",
+                        "tertiary": "#0b1217",
+                        "secondary-fixed": "#ffddb1",
+                        "on-tertiary-fixed": "#151c21",
+                        "tertiary-fixed-dim": "#c0c7ce",
+                        "on-secondary-fixed": "#291800",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#51453a",
+                        "background": "#fef8f6",
+                        "inverse-on-surface": "#f5f0ed",
+                        "on-secondary-container": "#78520f",
+                        "surface-container-high": "#ede7e5",
+                        "surface-variant": "#e7e1df",
+                        "on-surface-variant": "#4d453f",
+                        "outline-variant": "#d0c4bc",
+                        "on-primary-fixed": "#231a11",
+                        "on-secondary-fixed-variant": "#624000",
+                        "surface-container-highest": "#e7e1df",
+                        "surface": "#fef8f6",
+                        "inverse-surface": "#32302f",
+                        "surface-dim": "#ded9d7",
+                        "surface-container-low": "#f8f2f0",
+                        "secondary-container": "#fec97c",
+                        "inverse-primary": "#d5c3b6",
+                        "on-surface": "#1d1b1a",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2e241b",
+                        "secondary": "#7e5714",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fef8f6",
+                        "on-background": "#1d1b1a",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#f2be72",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "section-padding": "120px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond", "serif"],
+                        "headline-lg": ["EB Garamond", "serif"],
+                        "poetry-block": ["EB Garamond", "serif"],
+                        "display-md": ["EB Garamond", "serif"],
+                        "display-lg": ["EB Garamond", "serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "label-caps": ["Manrope", "sans-serif"],
+                        "headline-lg-mobile": ["EB Garamond", "serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-lg": ["36px", { "lineHeight": "44px", "fontWeight": "500" }],
+                        "poetry-block": ["22px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "display-md": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F7F1E7; /* Parchment override */
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-md min-h-screen flex antialiased">
+<!-- Admin Side Navigation -->
+<aside class="w-64 bg-surface-container-low border-r border-outline-variant/30 flex flex-col h-screen sticky top-0 shrink-0">
+<div class="p-8 border-b border-outline-variant/30">
+<a class="font-headline-md text-headline-md text-primary block" href="../index.html">Poetry Garden</a>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase tracking-widest">Administration</p>
+</div>
+<nav class="flex-1 py-8 flex flex-col gap-2 px-4">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors group" href="admin_dashboard_poetry_garden.html">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-primary-container bg-primary-container transition-colors group" href="admin_events_management.html">
+<span class="material-symbols-outlined text-primary-fixed">calendar_month</span>
+<span class="font-label-caps text-label-caps text-primary-fixed">Events</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors group" href="admin_artist_directory.html">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">group</span>
+<span class="font-label-caps text-label-caps">Artists</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors group" href="admin_bookings_manager.html">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">book_online</span>
+<span class="font-label-caps text-label-caps">Bookings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors group" href="admin_journal_management.html">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">edit_document</span>
+<span class="font-label-caps text-label-caps">Journal</span>
+</a>
+</nav>
+<div class="p-8 border-t border-outline-variant/30">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container transition-colors group" href="../index.html">
+<span class="material-symbols-outlined text-outline group-hover:text-error transition-colors">logout</span>
+<span class="font-label-caps text-label-caps">View Site / Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- Header -->
+<header class="px-12 py-8 flex justify-between items-end border-b border-outline-variant/30 shrink-0 bg-transparent">
+<div>
+<h2 class="font-display-md text-display-md text-primary">Manage Events</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Curate and oversee upcoming literary gatherings.</p>
+</div>
+<button class="bg-primary-container text-on-primary rounded px-6 py-3 font-label-caps text-label-caps flex items-center gap-2 hover:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+                New Event
+            </button>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto p-12">
+<!-- Controls (Search & Filter) -->
+<div class="flex justify-between items-center mb-8 gap-4">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-highest border-b border-outline-variant text-on-surface pl-12 pr-4 py-3 font-body-md text-body-md focus:outline-none focus:border-primary transition-colors rounded-t-sm" placeholder="Search events by name or venue..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps border border-transparent">All Status</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-variant transition-colors">Published</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-variant transition-colors">Drafts</button>
+</div>
+</div>
+<!-- Events List (Bento-style list) -->
+<div class="flex flex-col gap-4">
+<!-- Event Item 1 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/50 p-6 flex items-center gap-8 shadow-[0px_4px_20px_rgba(46,36,27,0.02)] hover:border-outline-variant transition-colors group">
+<div class="w-24 h-24 rounded overflow-hidden shrink-0">
+<div class="bg-cover bg-center w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A vintage close-up photograph of a brass fountain pen resting on an old, textured parchment manuscript illuminated by warm, directional candlelight. The mood is scholarly, intimate, and timeless, perfectly capturing a light-mode editorial aesthetic with deep mahogany shadows and bright golden highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEVhrxap80c1lFS48zj2DKWR3ZtDHCuxcRdsYRhzCiXEQJC_b0lnJl-Was7WNJ86G9_fh9r_hQoCJh5kqTTSmqxXgXKBxfwXN70I_2fos2Crs1t1vLOpvT_VEAwrkXngkrPB4Yf9Yj2jOSmxfLEcDdfosTh3xiZ89d-1dXT_tXJAAqs2zEfFZi5XFDT-JsZ9sCuvedbqI8GVDrqkaF8scGKLi3ggAe_aHuQORSeYaCM8hCWDSrc0HU7A')"></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-caps text-[10px] uppercase tracking-wider">Published</span>
+<span class="font-label-caps text-label-caps text-outline">Oct 12, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">An Evening with Rupi Kaur</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            The Grand Library, Mumbai
+                        </p>
+</div>
+<div class="text-right px-8 border-l border-outline-variant/30">
+<p class="font-headline-md text-headline-md text-primary">124</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Registered</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-primary transition-colors rounded hover:bg-surface-variant" title="View Analytics">
+<span class="material-symbols-outlined">bar_chart</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors rounded hover:bg-surface-variant" title="Edit Event">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-outline hover:text-error transition-colors rounded hover:bg-error-container" title="Delete Event">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Event Item 2 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/50 p-6 flex items-center gap-8 shadow-[0px_4px_20px_rgba(46,36,27,0.02)] hover:border-outline-variant transition-colors group">
+<div class="w-24 h-24 rounded overflow-hidden shrink-0 bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-4xl">image</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-1 rounded bg-surface-variant text-on-surface-variant font-label-caps text-[10px] uppercase tracking-wider">Draft</span>
+<span class="font-label-caps text-label-caps text-outline">Nov 05, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Modern Haiku Workshop</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Botanic Gardens Conservatory
+                        </p>
+</div>
+<div class="text-right px-8 border-l border-outline-variant/30">
+<p class="font-headline-md text-headline-md text-outline">--</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Registered</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-primary transition-colors rounded hover:bg-surface-variant disabled:opacity-50" disabled="" title="View Analytics (Disabled)">
+<span class="material-symbols-outlined">bar_chart</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors rounded hover:bg-surface-variant" title="Edit Event">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-outline hover:text-error transition-colors rounded hover:bg-error-container" title="Delete Event">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Event Item 3 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/50 p-6 flex items-center gap-8 shadow-[0px_4px_20px_rgba(46,36,27,0.02)] hover:border-outline-variant transition-colors group opacity-75">
+<div class="w-24 h-24 rounded overflow-hidden shrink-0">
+<div class="bg-cover bg-center w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A delicate, minimalist watercolor illustration of a single dried rose resting on textured cream paper. The lighting is soft and flat, emphasizing the organic edges of the paper and the subtle sepia tones of the flower, fitting a refined, heritage-inspired digital interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFWUrF-kCULaTdvj-eyWP7WhfLv-PD9QtR1aDZ258D4noQMFCxwYrOwUM4Z2cAw552p1aZv1xujXzY2-oRBWZcjlh9Z0JQ0DGdL1B9RLtX4EN2ngrdw9CmodPKGI3x4OcIjq1LntJK5WnZ4IKuAwUhTYJBM3xaPa78y0wf0xqAgFHYzRpwrX9Pckc4GCwvP8zV-iOlzy_hwgxYURZPKaW7kLb3Omo91FJaiSfP0NtdwpSyRWZuZ8QbgQ')"></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-1 rounded border border-outline-variant text-on-surface-variant font-label-caps text-[10px] uppercase tracking-wider">Past</span>
+<span class="font-label-caps text-label-caps text-outline">Sep 01, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface-variant mb-1">Spoken Word Open Mic</h3>
+<p class="font-body-md text-body-md text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            The Reading Room Cafe
+                        </p>
+</div>
+<div class="text-right px-8 border-l border-outline-variant/30">
+<p class="font-headline-md text-headline-md text-on-surface-variant">45</p>
+<p class="font-label-caps text-label-caps text-outline">Attended</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-primary transition-colors rounded hover:bg-surface-variant" title="View Analytics">
+<span class="material-symbols-outlined">bar_chart</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors rounded hover:bg-surface-variant" title="Edit Event">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-outline hover:text-error transition-colors rounded hover:bg-error-container" title="Delete Event">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

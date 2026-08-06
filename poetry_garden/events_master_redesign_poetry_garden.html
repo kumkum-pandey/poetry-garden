@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events | Poetry Garden</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#2e241b",
+                    "secondary": "#b88a44",
+                    "background": "#f7f1e7",
+                    "surface": "#fef8f6",
+                    "on-surface": "#1d1b1a",
+                    "on-surface-variant": "#4d453f",
+                    "outline": "#7f756e",
+                    "outline-variant": "#d0c4bc",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f2edeb",
+                    "surface-container-low": "#f8f2f0",
+                    "surface-container-high": "#ede7e5",
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "16px",
+                    "xl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "section-padding": "120px",
+                    "gutter": "32px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "poetry-block": ["EB Garamond", "serif"],
+                    "body-lg": ["Manrope", "sans-serif"],
+                    "headline-md": ["EB Garamond", "serif"],
+                    "headline-lg": ["EB Garamond", "serif"],
+                    "display-lg": ["EB Garamond", "serif"],
+                    "headline-lg-mobile": ["EB Garamond", "serif"],
+                    "display-md": ["EB Garamond", "serif"],
+                    "label-caps": ["Manrope", "sans-serif"],
+                    "body-md": ["Manrope", "sans-serif"]
+            },
+            "fontSize": {
+                    "poetry-block": ["22px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-lg": ["36px", {"lineHeight": "44px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "display-md": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f7f1e7;
+            background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+            color: #2e241b;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .paper-card {
+            background-color: #fffaf5;
+            box-shadow: 0px 4px 20px rgba(46, 36, 27, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(184, 138, 68, 0.1);
+        }
+
+        .paper-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 10px 30px rgba(46, 36, 27, 0.08);
+        }
+
+        .botanical-bg {
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .is-visible {
+            animation: fadeIn 0.8s forwards ease-out;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f7f1e7;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #b88a44;
+        }
+
+        .scrapbook-entry {
+            transform: rotate(-0.5deg);
+        }
+        .scrapbook-entry:nth-child(even) {
+            transform: rotate(0.5deg);
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 transition-colors duration-300 border-b border-outline-variant/30 bg-transparent py-4" id="top-nav">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-16">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="index.html">Poetry Garden</a>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps uppercase text-primary border-b border-secondary" href="events_master_redesign_poetry_garden.html">Events</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors" href="artist_profile_redesigned_poetry_garden.html">Past Evenings</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors" href="about_poetry_garden.html">About</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors" href="contact_poetry_garden.html">Contact</a>
+</div>
+<a href="contact_poetry_garden.html" class="bg-primary text-white px-6 py-2 rounded-sm font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all active:scale-95 inline-block">
+            Reserve Seat
+        </a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[80vh] flex items-center pt-24 overflow-hidden bg-background">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdc6G3-H7D5Ap0tVOhFHqLFN8UtveYyUXhu9ssfE-TBDHYdFVxu83hMVUwNvxUc9DgL52sA97jtdyDMWOJK6kfoH-FYScPfGBjSyLQMdPk4CUxqI60i4q11NTrbornhhKWwoXeSNFr-bqRnF3PG1geBpOLM2yZ5nEKNaSv-cU0_P_Mv9iucOt2wvjwDLozUQcabAVn3bkYAN8U5aXGU2bvQI8XiM1kpBGdVjHFakGhrFaz6CiV3pIc3g')"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] mb-6 block">A Literary Sanctuary</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-4xl mx-auto leading-tight mb-8">
+            Gatherings That Bring <br/>
+<span class="italic font-poetry-block text-secondary">Words to Life</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+            Join us for intimate evenings of spoken word, classical Urdu poetry, and contemporary storytelling. Our gardens are where the weight of the written word meets the warmth of the human voice.
+        </p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<a class="bg-primary text-white px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all text-center" href="#current-events">
+                Explore Events
+            </a>
+<a class="border border-primary text-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all text-center" href="#">
+                Become a Performer
+            </a>
+</div>
+</div>
+</header>
+<!-- Sticky Sub-Nav & Search -->
+<div class="sticky top-20 z-40 bg-background/95 backdrop-blur-sm border-b border-outline-variant/30 py-6">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col lg:flex-row justify-between items-center gap-8">
+<div class="flex p-1 bg-surface-container rounded-full border border-outline-variant/20">
+<button class="px-8 py-2.5 rounded-full font-label-caps text-label-caps uppercase tracking-wider text-white bg-secondary shadow-sm transition-all" onclick="scrollToSection('current-events')">Current</button>
+<button class="px-8 py-2.5 rounded-full font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant hover:text-primary transition-all" onclick="scrollToSection('upcoming-events')">Upcoming</button>
+<button class="px-8 py-2.5 rounded-full font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant hover:text-primary transition-all" onclick="scrollToSection('past-events')">Past Archive</button>
+</div>
+<div class="flex items-center gap-4 w-full lg:w-auto">
+<div class="relative flex-grow lg:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 text-label-caps font-label-caps outline-none uppercase placeholder:text-outline-variant transition-all" placeholder="SEARCH POETS OR THEMES..." type="text"/>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container text-on-surface-variant px-4 py-2 rounded-full font-label-caps text-[10px] uppercase cursor-pointer hover:bg-secondary hover:text-white transition-colors">Poetry</span>
+<span class="bg-surface-container text-on-surface-variant px-4 py-2 rounded-full font-label-caps text-[10px] uppercase cursor-pointer hover:bg-secondary hover:text-white transition-colors">Hindi</span>
+<span class="bg-surface-container text-on-surface-variant px-4 py-2 rounded-full font-label-caps text-[10px] uppercase cursor-pointer hover:bg-secondary hover:text-white transition-colors">Urdu</span>
+</div>
+</div>
+</div>
+</div>
+<main class="max-w-container-max mx-auto px-margin-desktop py-section-padding">
+<!-- Section 1: Current Events -->
+<section class="mb-section-padding scroll-mt-48 animate-on-scroll" id="current-events">
+<div class="flex items-center gap-4 mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary">Live Gatherings</h2>
+<span class="flex items-center gap-2 px-3 py-1 bg-error-container text-on-error-container rounded-full text-[10px] font-bold uppercase tracking-widest">
+<span class="w-1.5 h-1.5 bg-error rounded-full animate-pulse"></span>
+                Live Now
+            </span>
+</div>
+<article class="paper-card rounded-xl overflow-hidden flex flex-col md:flex-row min-h-[600px]">
+<div class="md:w-5/12 relative h-96 md:h-auto overflow-hidden">
+<img alt="The Manuscript Event Poster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhekwbjeKG6NsNVIg0Cj7YaY3WkVRO_Fu59fBFOnTsvVYtkKU2b4ua28q9YtKzZ6loJp_Fx1ph-jCJg7u5Sys2h8i9Atr-VE3B5nf5UIJgFLirsSycgW5Dh8BIqpml9apK6QhHvsbdzg7xgsJ420gMKZm7SGrnLV9m50yQ3ZFusB6rxfwVw0aA4pdOB_ebBmFcxsyhT4FKinI1iiyUQ3vNsEoN3s5Cjzp_Ib4o1qe5XBWzYtSbfkLHVNDedcBJAnIFhK4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<div class="md:w-7/12 p-10 md:p-20 flex flex-col justify-center">
+<div class="flex flex-wrap gap-4 mb-6">
+<span class="text-secondary font-label-caps text-label-caps uppercase tracking-widest">Hindi • Urdu • English</span>
+<span class="text-outline-variant font-label-caps text-label-caps uppercase tracking-widest">|</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest">Lajpat Nagar, Delhi</span>
+</div>
+<h3 class="font-display-md text-display-md text-primary mb-6 leading-tight">The Manuscript: Kavita, Kisse aur Chaos!</h3>
+<p class="font-body-lg text-on-surface-variant mb-10 leading-relaxed">
+                    A soul-stirring evening where the traditional meets the contemporary. Manu Vaishali hosts an intimate circle of storytellers and poets sharing their most vulnerable manuscripts. Experience the magic of words that bridge the gap between hearts.
+                </p>
+<div class="grid grid-cols-2 gap-12 mb-12 pb-10 border-b border-outline-variant/30">
+<div>
+<p class="text-outline font-label-caps text-[11px] uppercase tracking-widest mb-2">Happening Now</p>
+<p class="text-headline-md font-headline-md text-primary">Limited Entry</p>
+</div>
+<div>
+<p class="text-outline font-label-caps text-[11px] uppercase tracking-widest mb-2">Entry Fee</p>
+<p class="text-headline-md font-headline-md text-primary">₹499</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-6">
+<button class="bg-primary text-white px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all shadow-md">Reserve Your Seat</button>
+<button class="border border-outline text-primary px-10 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container transition-all">Event Details</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Section 2: Upcoming Events -->
+<section class="mb-section-padding scroll-mt-48 animate-on-scroll" id="upcoming-events">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Forthcoming Evenings</h2>
+<p class="font-body-md text-on-surface-variant">The next chapters in our collective narrative.</p>
+</div>
+<a class="font-label-caps text-label-caps text-secondary uppercase tracking-widest flex items-center gap-2 hover:underline group" href="#">
+                Full Calendar <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<article class="paper-card rounded-xl overflow-hidden group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Event Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0dkIBw4gmYcFn6YCGblHJ0exAs28r0WDi689IF9Gr9-P7vEDFsoPWIBC9ZgTteTRtnexr83jSfAP2r4gamlqQvTUC3Xqf6rFEdRgRPN8V1Mvi9SyyRpH90DA-78AOxFfE_gICRaj12NT7TDzJ3QI3sCuKTpwjhPUUEBTQ4F46fDiSM2QHLBHnLrb3YwdT_QXkqabonW5BQI00treu7yOo4iMCCBbK3F6N-gJrg1rywo7ogFchdWKgWA"/>
+<div class="absolute top-4 left-4 bg-primary/90 backdrop-blur-md px-4 py-2 rounded-sm text-[11px] font-bold uppercase text-white tracking-widest shadow-xl">
+                        12d 08h 45m
+                    </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-secondary font-label-caps text-[10px] uppercase tracking-widest mb-1 block">Sufi Narrative</span>
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">Sufi Soul Night</h4>
+</div>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary">bookmark</span>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex items-center gap-3 text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">location_on</span> Hauz Khas Village, Delhi
+                        </div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">language</span> Urdu • Hindustani
+                        </div>
+<div class="flex items-center gap-3 text-secondary font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">person</span> 12 Seats Remaining
+                        </div>
+</div>
+<button class="w-full bg-surface-container text-primary py-3 rounded-sm font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Book Ticket</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="paper-card rounded-xl overflow-hidden group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Event Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNG46iXumf_SE7jjpfqJZgmfxBSunboOvyVe0YUw8nw43prRa1v9BD_QkqjWw7qawr4h2KzzaKdpP53b0eEyrpxCyFNEfIjiGoNUe3cXRVzUeaDkn0bRCOYV8Zi6r6rcpz9hZtsoPq8e1g5kV88TMadCETihI8OyUFXTkCmu9OQmP-GFtY5PnykzyLH3ERfFuUyxnxDDxTIve2ba2MsIpCNJlECd90U6_rI3l6VwuezveOWQERpkbUwg"/>
+<div class="absolute top-4 left-4 bg-primary/90 backdrop-blur-md px-4 py-2 rounded-sm text-[11px] font-bold uppercase text-white tracking-widest shadow-xl">
+                        18d 02h 10m
+                    </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-secondary font-label-caps text-[10px] uppercase tracking-widest mb-1 block">Contemporary Verse</span>
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">The Weaver's Tale</h4>
+</div>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary">bookmark</span>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex items-center gap-3 text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">location_on</span> Bandra West, Mumbai
+                        </div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">language</span> English • Marathi
+                        </div>
+<div class="flex items-center gap-3 text-secondary font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">person</span> 05 Seats Remaining
+                        </div>
+</div>
+<button class="w-full bg-surface-container text-primary py-3 rounded-sm font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Book Ticket</button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="paper-card rounded-xl overflow-hidden group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Event Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdIK5yorBGs5b44DUTyruJhPSCs7jlRiwbpZrSIxkPqoRlkQlqsbGhnTTzmI9kXMTgXduz5-EvlZYHoPhzSCowYEXV4g7O-_ufcgWQgKkVzckZduyRLfKTuIq730nfComJ8aO9h_05r4LuEteiHc0v6LAi1bNw6_IoGMMH57Sg2F9oXzRzVHDTlJuLCLA9kCW1Wt3vGEbHETIEp83gS871YIiVLGqapCTZcQNbrPgSEMZp1JIyi4aCSQ"/>
+<div class="absolute top-4 left-4 bg-primary/90 backdrop-blur-md px-4 py-2 rounded-sm text-[11px] font-bold uppercase text-white tracking-widest shadow-xl">
+                        24d 11h 05m
+                    </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-secondary font-label-caps text-[10px] uppercase tracking-widest mb-1 block">Workshop Series</span>
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">Founders' Circle</h4>
+</div>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary">bookmark</span>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex items-center gap-3 text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">location_on</span> Online • Virtual Garden
+                        </div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">language</span> Multilingual
+                        </div>
+<div class="flex items-center gap-3 text-secondary font-label-caps text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">person</span> Open Registration
+                        </div>
+</div>
+<button class="w-full bg-surface-container text-primary py-3 rounded-sm font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Reserve Slot</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Section 3: Past Events Archive -->
+<section class="pt-section-padding scroll-mt-48 animate-on-scroll" id="past-events">
+<div class="text-center mb-24">
+<h2 class="font-display-md text-display-md text-primary mb-4">The Archive</h2>
+<div class="w-24 h-0.5 bg-secondary mx-auto mb-8"></div>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Relive the echoes of previous gatherings through shared memories and silent verses.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Archive Timeline -->
+<aside class="lg:w-48 order-2 lg:order-1">
+<nav class="sticky top-64 flex lg:flex-col gap-8 overflow-x-auto lg:overflow-visible pb-6 lg:pb-0 custom-scrollbar border-l border-outline-variant/30 ml-4">
+<button class="text-secondary font-label-caps text-label-caps uppercase tracking-widest border-l-4 border-secondary -ml-1 pl-6 text-left">2025</button>
+<button class="text-outline font-label-caps text-label-caps uppercase tracking-widest border-l-4 border-transparent -ml-1 pl-6 text-left hover:border-outline hover:text-primary transition-all">2024</button>
+<button class="text-outline font-label-caps text-label-caps uppercase tracking-widest border-l-4 border-transparent -ml-1 pl-6 text-left hover:border-outline hover:text-primary transition-all">2023</button>
+<button class="text-outline font-label-caps text-label-caps uppercase tracking-widest border-l-4 border-transparent -ml-1 pl-6 text-left hover:border-outline hover:text-primary transition-all">2022</button>
+</nav>
+</aside>
+<!-- Archive Content: Journal Style Entries -->
+<div class="flex-grow order-1 lg:order-2 space-y-32">
+<!-- Entry 1 -->
+<article class="scrapbook-entry paper-card p-8 md:p-12 rounded-xl relative overflow-hidden">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-12">
+<div class="xl:col-span-5">
+<div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg mb-8">
+<img alt="Video Thumbnail" class="w-full h-[400px] object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3wHSbr0eTJgsssbqXVTuIvb4zGMBJ8NJLS84jZnv3kKkHw8jxQCTFSdMGbTYjeAwIb5Vf0GDEkXa9jobfOVWpyimEEU-4W7GYtRNG1UmJlc7NlHhpwlJO2gjELoHYmgqlQdgSBHIPtYIUB98nqFxVOc2ZbPbLPJbaFaaCOgdHvAtbR-Q_OWR8RO8i_qtHOFg0BPFi6mWjyMe5joNXRoBtXt9Tk6HQlMpaYyIrJX2QEQmEIEbCGBs5Ug"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+<div class="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40">
+<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-4 right-4 bg-black/60 text-white text-[10px] px-3 py-1 font-bold uppercase tracking-widest rounded-sm">Watch Highlights</div>
+</div>
+<div class="bg-surface-container-high/30 p-8 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary mb-4">format_quote</span>
+<p class="font-poetry-block text-xl italic text-primary leading-relaxed">
+                                    "One of the most intimate poetry evenings I've experienced. The way the words echoed against the stone arches of Lodhi Gardens was magical."
+                                </p>
+<p class="mt-4 font-label-caps text-[10px] uppercase tracking-widest text-secondary">— Arundhati S., Attendee</p>
+</div>
+</div>
+<div class="xl:col-span-7 flex flex-col">
+<span class="text-secondary font-label-caps text-label-caps uppercase tracking-widest mb-4">April 12, 2025 • Delhi</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-6">Midnight Manuscripts Vol. IV</h3>
+<p class="font-body-md text-on-surface-variant mb-10 leading-relaxed">
+                                Under the starlit sky of Lodhi Gardens, fifteen poets shared their unspoken truths. The evening was a testament to the power of vulnerability, drawing a crowd of over 120 literature enthusiasts.
+                            </p>
+<!-- Masonry Style Mini-Gallery -->
+<div class="grid grid-cols-2 gap-3 mb-10">
+<img alt="Gallery 1" class="w-full h-32 object-cover rounded shadow-sm hover:scale-95 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHRtDbPpYc1AbprQ2vJaZ_pc_CWDHqbwzTNlcsdPS2281CJ1aW_prB7CnqKWlrWBYK5cIpos7BtD65pS9vJ-A7LHRJVFj2xg7ryZBw5q-Ae9GR_1lAFhYcKJt5K5xu7ude4EOFAY2Vpphi0vmSQHZBX7jADDQgA029f0Jb_LPUTWTw0HW-4zZ9cheetg1n2I42jduOizrw9-2N-SEdNc5fZJtoQJDCUqRaVQlRVDd2u8L81hYUHFTAXQ"/>
+<img alt="Gallery 2" class="w-full h-44 object-cover rounded shadow-sm hover:scale-95 transition-transform -mt-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcAjWmNVe2ImkM0wPZPD5EfH4DyUQ6rlcXim-x3zsIBPAE2Uttk0eyPUerH_aDI97d52xpSSlzs-R7uyUz9UN7dwUttEScqorxYMZtr8Y90dfaBcj2PzaQiGDY8BQ6bc8UFQHKMAFNMNg6bb_ZSt-OSanFZo1pEpQivVhRjmEBZPrlCqlCdO_dbuVJ2CcMT9tq0z_8uQ05V3eaHEvknOgilxMcRXaVuw2Xt4lKwWp0mmdFPAHt-YMog"/>
+<img alt="Gallery 3" class="w-full h-40 object-cover rounded shadow-sm hover:scale-95 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkXwZQfnTdu0ucx64KgxammX54L2f7lHB75jOk_-rUhYBMIYhreZJm4QmELbK11o2MyZW_msYVais3NDiRBwWB8w6r4AQ0rlAzyN6Eh3ID9eIpPB3iTNmV9t_xiltWMkPNSILrOgoPBIZCqmyyNegna64vpEbgn1736G_dmZ8eTJk-fLsEdSugibjwkPM5ZOgdPcXh06gE8j5uX4xdnCVAfptqz6-fuc3TIMewDTWmA7e3O-iX_q2rYw"/>
+<img alt="Gallery 4" class="w-full h-32 object-cover rounded shadow-sm hover:scale-95 transition-transform -mt-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk6vB4yMMlSSaPH6VPhqOmeGiSP4XtPro74FOHkinPef8tUCj9jZJDbEsUbvUBSNMeA0TKF3BlSY5j8J8Qtl772sNgi9vt1VQMt8-oeh-TU8rjHpotyt0DWR_w03y1TqhtSWwDnCBl-bQ_Pq0BScgYdzlSAG_zzUMoJysgBkrTqTyeKo3F0mLPh_nffXDB7u1akBf0DY9djqLrDD5HbuUxOa68xJBzzFLhvdpAxDK-mOZylgn6ddaOeg"/>
+</div>
+<button class="bg-primary text-white px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-all self-start">Read Full Entry</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer CTA -->
+<section class="relative bg-surface-container-low py-section-padding overflow-hidden border-t border-outline-variant/30">
+<img class="absolute inset-0 botanical-bg scale-150 rotate-12 opacity-5" src="https://www.transparenttextures.com/patterns/floral-paper.png"/>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10">
+<h2 class="font-display-md text-display-md text-primary mb-8">Every gathering begins with a single story.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
+<button class="bg-primary text-white px-12 py-5 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-secondary transition-all shadow-lg">Reserve Your Seat</button>
+<button class="border border-primary text-primary px-12 py-5 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all">Join the Community</button>
+</div>
+<div class="flex justify-center gap-12 items-center opacity-40">
+<span class="w-16 h-px bg-primary"></span>
+<span class="font-poetry-block text-2xl">Poetry Garden</span>
+<span class="w-16 h-px bg-primary"></span>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-6 max-w-xs">
+<a class="font-headline-lg text-headline-lg text-primary" href="index.html">Poetry Garden</a>
+<p class="text-on-surface-variant font-body-md">Cultivating the art of the spoken word in Mumbai and beyond. A refuge for readers, writers, and dreamers.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="contact_poetry_garden.html">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="contact_poetry_garden.html">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Explore</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="events_master_redesign_poetry_garden.html">Our Events</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="artist_profile_redesigned_poetry_garden.html">Past Nights</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="artist_profile_redesigned_poetry_garden.html">The Gardeners</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Community</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Membership</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Volunteer</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Partner With Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Info</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Privacy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Terms</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30 text-center md:text-left">
+<span class="font-body-md text-on-surface-variant opacity-70">© 2024 Poetry Garden. All rights reserved.</span>
+</div>
+</footer>
+<!-- Floating Action Button -->
+<button class="fixed bottom-10 right-10 z-50 bg-secondary text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">stylus</span>
+</button>
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('top-nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('bg-background/95', 'backdrop-blur-md', 'shadow-sm');
+            nav.classList.remove('bg-transparent');
+        } else {
+            nav.classList.remove('bg-background/95', 'backdrop-blur-md', 'shadow-sm');
+            nav.classList.add('bg-transparent');
+        }
+    });
+
+    // Smooth scroll for nav items
+    function scrollToSection(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Animation Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+</body></html>
