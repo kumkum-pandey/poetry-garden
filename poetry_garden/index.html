@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Poetry Garden | Where Every Word Finds a Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#ede7e5",
+                    "on-primary-fixed-variant": "#51453a",
+                    "outline-variant": "#d0c4bc",
+                    "surface": "#fef8f6",
+                    "on-surface-variant": "#4d453f",
+                    "on-background": "#1d1b1a",
+                    "on-secondary-container": "#78520f",
+                    "secondary-container": "#fec97c",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1d1b1a",
+                    "on-tertiary-fixed-variant": "#41484d",
+                    "on-tertiary-fixed": "#151c21",
+                    "tertiary": "#0b1217",
+                    "inverse-primary": "#d5c3b6",
+                    "outline": "#7f756e",
+                    "background": "#fef8f6",
+                    "inverse-surface": "#32302f",
+                    "primary": "#180f08",
+                    "secondary-fixed": "#ffddb1",
+                    "primary-container": "#2e241b",
+                    "tertiary-container": "#20272c",
+                    "surface-container-highest": "#e7e1df",
+                    "surface-bright": "#fef8f6",
+                    "primary-fixed-dim": "#d5c3b6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#7e5714",
+                    "secondary-fixed-dim": "#f2be72",
+                    "inverse-on-surface": "#f5f0ed",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#695c51",
+                    "on-tertiary-container": "#878e94",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#f2dfd1",
+                    "on-secondary-fixed": "#291800",
+                    "tertiary-fixed-dim": "#c0c7ce",
+                    "tertiary-fixed": "#dce3ea",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#624000",
+                    "on-primary-fixed": "#231a11",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f8f2f0",
+                    "surface-dim": "#ded9d7",
+                    "surface-container": "#f2edeb",
+                    "on-primary-container": "#9a8a7e",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e7e1df"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "16px",
+                    "xl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "section-padding": "120px",
+                    "gutter": "32px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["EB Garamond", "serif"],
+                    "display-lg": ["EB Garamond", "serif"],
+                    "body-lg": ["Manrope", "sans-serif"],
+                    "body-md": ["Manrope", "sans-serif"],
+                    "poetry-block": ["EB Garamond", "serif"],
+                    "label-caps": ["Manrope", "sans-serif"],
+                    "headline-lg": ["EB Garamond", "serif"],
+                    "headline-lg-mobile": ["EB Garamond", "serif"],
+                    "display-md": ["EB Garamond", "serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "poetry-block": ["22px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["36px", {"lineHeight": "44px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "display-md": ["48px", {"lineHeight": "56px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .paper-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+            background-color: #fef8f6;
+        }
+        .hero-mask {
+            -webkit-mask-image: radial-gradient(circle, black 40%, transparent 85%);
+            mask-image: radial-gradient(circle, black 40%, transparent 85%);
+        }
+        .editorial-shadow {
+            box-shadow: 0px 4px 20px rgba(46, 36, 27, 0.05);
+        }
+        .botanical-accent {
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .serif-italic { font-family: 'EB Garamond'; font-style: italic; }
+        .vintage-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d0c4bc, transparent);
+            position: relative;
+        }
+        .vintage-divider::after {
+            content: '❦';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #fef8f6;
+            padding: 0 10px;
+            color: #7e5714;
+            font-size: 14px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 transition-colors duration-300 border-b border-outline-variant/30 bg-transparent py-unit" id="top-nav">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-16">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="index.html">Poetry Garden</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary py-1 transition-colors hover:text-secondary" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors hover:text-secondary" href="events_master_redesign_poetry_garden.html">Events</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors hover:text-secondary" href="artist_profile_redesigned_poetry_garden.html">Past Evenings</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors hover:text-secondary" href="about_poetry_garden.html">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors hover:text-secondary" href="contact_poetry_garden.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="contact_poetry_garden.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-sm font-label-caps text-label-caps hover:bg-secondary transition-all active:scale-95 inline-block">
+                Reserve Seat
+            </a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden paper-texture pt-20">
+<div class="absolute top-0 right-0 w-1/3 h-full hero-mask hidden lg:block opacity-60">
+<img alt="Manuscript texture" class="w-full h-full object-cover grayscale-[20%] sepia-[10%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn-kEj504hRKFcTnUc7QYCOwihvQhq1aVgm1XBNvWN8fnHwJGnFEtHE_0e3EgNdonjQIPkQ0_SPFFMot1Zu0GTkk_VtocZcxgIfuQ8xcNxZgA5a2Cmzs4qONyon78RTZ9hgX5Sm-WarfDjjqzjKfYjXR-07O3hBO30AcC3aGV3xJnp6ppP-vB1lzH9eFrba9WDNdxa-BbYN1nhFpkkDkKfmoAKwIhTB5P9H4GEFqmTYCymlW7YiS_Zcg"/>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter relative z-10">
+<div class="lg:col-span-8 flex flex-col items-start gap-8">
+<span class="font-label-caps text-label-caps text-secondary bg-secondary-container/20 px-3 py-1 rounded-full">EST. 2024 • MUMBAI</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg leading-tight text-primary max-w-2xl">
+                Where Every Word Finds <br/> <span class="italic font-normal">a Home</span>.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                Poetry Garden is a community built around stories, emotions, poetry and meaningful conversations. A sanctuary for the spoken word in the heart of the city.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-sm font-label-caps text-label-caps flex items-center justify-center gap-2 hover:bg-secondary transition-all">
+                    Explore Events
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="border border-primary text-primary px-8 py-4 rounded-sm font-label-caps text-label-caps flex items-center justify-center hover:bg-surface-container-low transition-all">
+                    Join Community
+                </button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</header>
+<!-- Upcoming Gatherings Section (New) -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] uppercase">The Sanctuary</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Upcoming Gatherings</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Event Card 1 -->
+<article class="bg-surface border border-outline-variant/30 rounded-lg overflow-hidden group hover:border-secondary transition-colors duration-500 editorial-shadow">
+<div class="relative h-72 overflow-hidden">
+<img alt="Sufi Poetry event stage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCADVc5DZ-6Wgn7tAqb6c2en5xj1qL3tnYevv6Ezwh96ecRv-2GZQHEoATR_3ysmSrbKjquCxyrW5dNLynk6NAThGz12VBo6ZZ0Vj_9RtU-PjqvRC-5ncA_Ty61xcDmZYDBi0wC9M5WSdrxjNk87y-8qOOdx_vL3dIiTaHmF43EczlVxQNJPOWhuC-MbekAc5AhFib1h5yRFTKdz376LOYSnIBC14kKSPRlb-caSmZ8h0OaY11b_5Oktw"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-3 py-2 rounded font-label-caps text-label-caps text-primary">
+                        NOV 05
+                    </div>
+</div>
+<div class="p-8 space-y-6">
+<div class="space-y-2">
+<span class="text-[10px] font-label-caps uppercase text-secondary tracking-widest">Sufi Poetry</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">Echoes of the Beloved</h3>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2">
+                        A night dedicated to the works of Rumi, Bulleh Shah, and Kabir. We explore the mystical connection between the creator and the soul.
+                    </p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Urdu | Punjabi</span>
+<button class="font-label-caps text-label-caps text-secondary hover:underline transition-all">Reserve Your Seat →</button>
+</div>
+</div>
+</article>
+<!-- Event Card 2 -->
+<article class="bg-surface border border-outline-variant/30 rounded-lg overflow-hidden group hover:border-secondary transition-colors duration-500 editorial-shadow">
+<div class="relative h-72 overflow-hidden">
+<img alt="Workshop workspace" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMUUlQ5Nz6yDYp1O8QdSoCNUmtCsTx31XLpP9EJa_-f8d84r13KBX8Aezw0sFEmRhbBhNbqM5IDobtxALMFQ4EKN7Mp_dEob5ywX7DJNp3LRl1ys5nH4tBNHZf3lwIwQirjKNmLk1knIhAGdgrVb-UzGwkUwyuuISLLVu60AJWVQJUtB7_NLu9vjgRWARdLcjsI9jxbPOieezHdId6VZ_snbcBc-h6_yWBQpcPNmhF31TSnUZNvGZf6w"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-3 py-2 rounded font-label-caps text-label-caps text-primary">
+                        NOV 12
+                    </div>
+</div>
+<div class="p-8 space-y-6">
+<div class="space-y-2">
+<span class="text-[10px] font-label-caps uppercase text-secondary tracking-widest">Workshop</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">Ink &amp; Introspection</h3>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2">
+                        Learn the craft of rhythmic storytelling in this immersive session. We will cover metaphors, cadence, and finding your unique poetic voice.
+                    </p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">English</span>
+<button class="font-label-caps text-label-caps text-secondary hover:underline transition-all">Reserve Your Seat →</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">The Garden Way</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-16">The Ink we write with</h2>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="space-y-6 group">
+<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center mx-auto transition-transform duration-500 group-hover:-rotate-12 relative">
+<span class="material-symbols-outlined text-secondary text-4xl">edit_note</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Words</h3>
+<p class="font-body-md text-on-surface-variant max-w-xs mx-auto">We believe in the precision of language and the power of a perfectly placed metaphor to shift perspectives.</p>
+</div>
+<div class="space-y-6 group">
+<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center mx-auto transition-transform duration-500 group-hover:scale-110 relative">
+<span class="material-symbols-outlined text-secondary text-4xl">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Emotions</h3>
+<p class="font-body-md text-on-surface-variant max-w-xs mx-auto">Vulnerability is our strength. We create a brave space for the rawest, most human parts of our stories.</p>
+</div>
+<div class="space-y-6 group">
+<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center mx-auto transition-transform duration-500 group-hover:rotate-12 relative">
+<span class="material-symbols-outlined text-secondary text-4xl">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Community</h3>
+<p class="font-body-md text-on-surface-variant max-w-xs mx-auto">Art thrives in fellowship. We are more than just listeners; we are a collective of souls holding space for each other.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Candid Memories Section (New) -->
+<section class="bg-surface-container-low py-section-padding">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12 flex justify-between items-end">
+<div>
+<p class="font-label-caps text-label-caps uppercase text-secondary mb-2">Visual Stories</p>
+<h2 class="font-display-md text-display-md text-primary">Candid Memories</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter overflow-x-auto px-margin-mobile md:px-margin-desktop scrollbar-hide pb-8">
+<!-- Memory Item 1 -->
+<div class="flex-shrink-0 w-80 group cursor-pointer">
+<div class="overflow-hidden rounded-lg mb-4 aspect-[4/5] editorial-shadow">
+<img alt="Reading ritual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTF85RbhFsgCHunOai4Cs0LxUCqhHuC8lajTy1B_k9LDSbK4nJwknGoSLP1iTYwdsGcK42abtHfOS7nCPHerSCMXYatI2Cc8GYFACDVc6fERFJvrv24HW8oeLlVv0621vOVHRFuLoh5ra65Zoo0qx1wpYmeuWizB5Sc9anJj5CpJhQ22uG5x9IaqLEoWZyok7_hEVmttnYXkvcQrXMrh039FcbKn1UECkHxZ7XUD03Esf8-0qRSs3K7Q"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Rituals of Reading</p>
+<p class="font-body-md text-body-md italic text-primary">"Every book holds a secret..."</p>
+</div>
+<!-- Memory Item 2 -->
+<div class="flex-shrink-0 w-80 group cursor-pointer">
+<div class="overflow-hidden rounded-lg mb-4 aspect-[4/5] editorial-shadow">
+<img alt="Golden hour gathering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5g4wCDpzRy5l5jNk2T2AOOByVRru-tKySCTaNkH20TiNg4vtvEpsuVJUjR6njWb3De_wGj0UfLQ5-U0HM3S7HgJfn7MFCmGywLKVVQbi0f_Mqp-e2i1HOqJ74CzwKrL8zNRpWnK2Ux2R_ATqva0NO4fgWM21uTx5iBaVOrpqqb7svI1CVzT2NCtykLRsFjwx8Uoc4Isd93MKtSMcylPwcT8lkbIzGcg2-l_-igDJGQBnzpB_hbPwcXw"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">The Golden Hour</p>
+<p class="font-body-md text-body-md italic text-primary">Waiting for the first verse.</p>
+</div>
+<!-- Memory Item 3 -->
+<div class="flex-shrink-0 w-80 group cursor-pointer">
+<div class="overflow-hidden rounded-lg mb-4 aspect-[4/5] editorial-shadow">
+<img alt="Typewriter detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoko2OgatGSwcNnvnPXPE-W6Q2fdqYAG9aNuIuPJDie-GvdsDLyR9fsxdSOphHA6g-RzWYzk1aqKHlV8W8WLE6BMaBEHMLNNp5RtO5RbfwpH9zZF49gb7TOUOZMJXOUg1DO4ourM3GS3x77AVIwJymfRwLK27AyvtIqw9sW6OOk0eDmSf1usWnGOShROrdC1j9GXpmmgLewA_0p2IMwR1WevdQDNfEgoBTTdV1bHCJnwkdtQReQHAMug"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">The Archive Office</p>
+<p class="font-body-md text-body-md italic text-primary">Where memories are indexed.</p>
+</div>
+<!-- Memory Item 4 -->
+<div class="flex-shrink-0 w-80 group cursor-pointer">
+<div class="overflow-hidden rounded-lg mb-4 aspect-[4/5] editorial-shadow">
+<img alt="Joyful connection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCABVmc24dExHo3SqJj5FON8aZyp0PGuTacy4B6guoBDsRissmFcnjGCw3mXB6wRuA6Vn67grwEfJYqaBwxWo1oj24MX4EZRLARmhIAc7-iifsZEzvROVOtrWWlzd61kwObEw45s2dWpKYSq37I1snPwobNn55LS29dk0zUjIlLZua9gnS85A3GT3ibh6Ybqi2tX4-e9r6_pdJCkjDoBcRY4K_VDmfRJh1JzoHA1gyDVCa5V346zwNFkA"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Shared Joy</p>
+<p class="font-body-md text-body-md italic text-primary">Between the lines of prose.</p>
+</div>
+</div>
+</section>
+<!-- Evening Recitals / Voices in Motion Section (New) -->
+<section class="py-section-padding bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-16">
+<div>
+<p class="font-label-caps text-label-caps text-secondary-fixed mb-2">Cinematic Highlights</p>
+<h2 class="font-display-md text-display-md leading-tight">Evening Recitals</h2>
+</div>
+<a class="hidden md:flex items-center gap-2 font-label-caps text-label-caps text-secondary-fixed border-b border-secondary-fixed pb-1 hover:text-white hover:border-white transition-colors" href="#">
+                Watch Archive <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Video Feature -->
+<div class="md:col-span-8 group cursor-pointer relative overflow-hidden rounded-lg aspect-[16/9] editorial-shadow">
+<img alt="Large audience at poetry event" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVuDlcGgptWzMllL5DQWpjIwpf7U9NdDjxoMf6z6n3gUfGCSJdgiUdpcS772TKTdDNq4pXRTCZ6VWVkEjuwtyRdpTG03Owlll3iWd0ot9X7bmyj0KbwILaB8VIDWAxv1imY7CKVTO50GrV2ne6A6ovbNic8oAsI5NTGoxpxSva8Vm8_CcdfuJSw9fKVJKlkpL-OkJuXnWLrL6R3ObuEb2a-5UL3pW-N5nTR0vRDG0jzVw19euHB4_ILA"/>
+<div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-all flex items-center justify-center">
+<div class="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 w-full p-8 bg-gradient-to-t from-primary/90 to-transparent">
+<span class="font-label-caps text-label-caps text-secondary-fixed uppercase mb-2">Winter Solstice 2024</span>
+<h3 class="font-headline-lg text-white">Manuscript: Kavita, Kisse aur Chaos</h3>
+</div>
+</div>
+<!-- Side Video List -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="group relative overflow-hidden rounded-lg aspect-video cursor-pointer">
+<img alt="Poet performing" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6PO4mG5WoHWrT__zae4NyqKJPxYN8c6lx3GSfLakj1FpXDFyrXCBk_W3oZ98t3_lzVcTEBkU3_lQ4giTFYcFTVtAjtv-nBrgID81ImicteTDAX8gyyIydxsE2lF9ApPRBymjJ2BtqjY1yati7mRy4abIIb_GDXGV6UTnkz7aRgqZby167D7fcUatApoqwHvFc4BPxNm0ariBUGlDdfYZTmY_L0HAC1qWSgB_YhNPcIM2TvRRsr5knwA"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+</div>
+<div class="absolute bottom-3 left-3">
+<p class="font-label-caps text-[10px] text-white bg-primary/60 px-2 py-0.5 rounded">03:45</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-lg aspect-video cursor-pointer">
+<img alt="Community laughter" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCABVmc24dExHo3SqJj5FON8aZyp0PGuTacy4B6guoBDsRissmFcnjGCw3mXB6wRuA6Vn67grwEfJYqaBwxWo1oj24MX4EZRLARmhIAc7-iifsZEzvROVOtrWWlzd61kwObEw45s2dWpKYSq37I1snPwobNn55LS29dk0zUjIlLZua9gnS85A3GT3ibh6Ybqi2tX4-e9r6_pdJCkjDoBcRY4K_VDmfRJh1JzoHA1gyDVCa5V346zwNFkA"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+</div>
+<div class="absolute bottom-3 left-3">
+<p class="font-label-caps text-[10px] text-white bg-primary/60 px-2 py-0.5 rounded">05:12</p>
+</div>
+</div>
+<div class="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col justify-center gap-2">
+<p class="font-label-caps text-[11px] text-secondary-fixed">MEMBER EXCLUSIVE</p>
+<p class="font-body-md text-white opacity-80 italic">"The shortest distance between two hearts is a poem told in person."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Founders' Note Section -->
+<section class="py-section-padding paper-texture overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+<div class="lg:col-span-5 relative">
+<div class="absolute -inset-4 border border-outline-variant rounded-lg -z-10"></div>
+<div class="aspect-[4/5] bg-cover bg-center rounded-lg grayscale hover:grayscale-0 transition-all duration-700 editorial-shadow" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYGHoKfUng1mxV8DLqpdOuDmwukZIuwyXwLDZsVc3J98qom-Y6vZHaNu0KfcrMwFjWCAxMERV4mGoFcjnQCO2ktgSQHf1V9aMsu6OnDN9GO6Jk5EjeEoKMSc2OD6l_acW5SUrtEqFtaMfS__w3rxibWbS83Uh67VVR7t4e8T2iLtUN_hO8MLFeYSAMGwinq88lsiB85leHeo4eC5Ftf7OrQ0E45bq-B0hNT3O2U8zQAccFIJuLXsP_-w')"></div>
+</div>
+<div class="lg:col-span-7 space-y-8">
+<div class="flex items-center gap-4">
+<span class="w-12 h-px bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">A Word from our Founder</span>
+</div>
+<h2 class="font-display-md text-display-md text-primary leading-tight">"Poetry is the shortest distance <br/> between two hearts."</h2>
+<div class="font-body-lg text-body-lg text-on-surface-variant space-y-6">
+<p>Poetry Garden was never meant to be an 'industry'. It was meant to be an invitation. I remember sitting in my balcony during a rainy Mumbai evening, wishing I had someone to share the weight of a poem with.</p>
+<p>This community is my response to that wish. We prioritize the 'slow interaction'—the kind that leaves you feeling more human, less processed.</p>
+</div>
+<div class="pt-4">
+<p class="font-headline-md text-headline-md text-primary">Manu Vaishali</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Founder &amp; Curator</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section (Shortened original Community Intro) -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="flex flex-col gap-8">
+<h2 class="font-display-md text-display-md text-primary">The Soul of Mumbai's Spoken Word</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg">
+<p>We believe poetry is not just on the page, but in the collective breath of a room. Our mission is to preserve the slow beauty of conversation.</p>
+<div class="flex gap-12 items-center pt-4">
+<div>
+<div class="font-display-md text-primary">120+</div>
+<div class="font-label-caps text-label-caps text-secondary">Evenings Hosted</div>
+</div>
+<div>
+<div class="font-display-md text-primary">3.5k</div>
+<div class="font-label-caps text-label-caps text-secondary">Members</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="aspect-[3/4] rounded-lg overflow-hidden editorial-shadow border border-outline-variant/30">
+<img alt="Microphone detail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzO5jLeou267YHbUoXAMwOL3qbByWikBbAp4qhKccLrbQKcZMW8J9t1YQ9b2rjenJtOkL4-o4VyhadJECKCUuTbcGimBHqDeQzh7thxcgQWvaCH_mKdXZI6Stl9PoGD0o2_I36Y9uHiDn3RzsD3Cam-PGwkzDItANQENdHcsVf6WeyoN8hUmlmtSm7RjP9BTeUwrQi_ZzKvhPUGBXZ9Yer8tK5B9aYLoHeh_Dw6EzMP_UXo2q8C851yA"/>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-square rounded-lg overflow-hidden editorial-shadow border border-outline-variant/30">
+<img alt="Community applause" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvQztVvt4o7c4EIo98d35DdkIZHkcBLcuE2jaZ01rP3Hb78uKCyVVjOWMJZ_VeknESuSyXmyv_TzO_oUlJywM4vqhc-o_lReZHnSTYs_5r8Y1RgjRF5_0-5oiPe7YO3o8_yy1vAJn8NLH6ei1hT_xKD5Rpv2_7-fZv6FTiiJZ-k5OK334Cg3-_jCfH88dgka9D9_MMpxdIApkwoRXKd4-MlUraVkNC3qiyVJHSEAwr-12vx6-f1bmzdw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Map Section -->
+<section class="py-section-padding paper-texture overflow-hidden relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+<div class="lg:col-span-5 space-y-8">
+<span class="font-label-caps text-label-caps text-secondary">Visit the Garden</span>
+<h2 class="font-display-md text-display-md text-primary">The Map to the Garden</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<div>
+<p class="font-headline-md text-[20px] text-primary">Heritage Quarter, South Mumbai</p>
+<p class="font-body-md text-on-surface-variant italic">12th Floor, Manuscript Building, Kala Ghoda, Mumbai 400001</p>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-sm">Tucked away in the historic heart of the city, our sanctuary is open to all who seek a moment of verse and silence.</p>
+<button class="font-label-caps text-label-caps text-primary border-b border-primary hover:text-secondary hover:border-secondary transition-colors pb-1 uppercase tracking-widest">Get Directions</button>
+</div>
+</div>
+<div class="lg:col-span-7 h-[500px] rounded-lg overflow-hidden border border-outline-variant/30 relative group shadow-lg">
+<img alt="Vintage map of South Mumbai" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVcg0BzXbw6dIHMMjSHk1avh06NeQ_Pcp8JbGzNbqgyVeIsDX84ty2M9_dtBdc_fi3LwHYtaQWaTCGJ_YuKn-8cjP3fPLCIE7PuJ7ayJc-wJ7F1GU9gpkPITcDaiGPHrNZTaT0cklHcvXJDOGmxeXdfXT5aBfGNAmLsmwkI_4LfHYjBOuw6HI9esYDLEfBf9fO90330ZPkyedD9srzsrz-Ny9hv5HXfVnbfz01XPmi6BuBYBeb9Xt0yg"/>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-primary p-3 rounded-full shadow-2xl border-4 border-surface animate-pulse">
+<span class="material-symbols-outlined text-white text-[28px]" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 bg-surface/90 backdrop-blur-sm px-6 py-3 rounded border border-outline-variant">
+<p class="font-label-caps text-[12px] uppercase text-primary tracking-widest">The Heritage Wing</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram & Newsletter -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div class="flex flex-col justify-center gap-8">
+<div class="max-w-md">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Garden Journal</h2>
+<p class="text-on-surface-variant font-body-md">Receive weekly poetry prompts, community highlights, and early-access tickets directly in your inbox.</p>
+</div>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg">
+<div class="flex-grow">
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-colors py-4 font-body-md" placeholder="Email address" type="email"/>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-sm font-label-caps text-label-caps hover:bg-secondary transition-all whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square bg-surface-container overflow-hidden rounded group relative">
+<img alt="Instagram moment" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMr3MABYonCbZXhOqvxAE4lw8TMXX8KBrSRFITqyBNI1dghvlqA16I_lGCj5SLaEhDzAP98LoTT8b67KlMmp0_iX0XpGYyVy2YXiy3KZmhdGKPQwiZ5fDqll-CX_i6fAjmLA9xCEU3f-7jqIqaK7VWWyilPG8bep_v7VK7Lx7LOsHGECLEf-huW6FQmXNcbBeN0t67W13kYwQ6nLPJVOxY4lOgmF8wbBFGFJZ5puN1_IIb6F5e_0QusQ"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded group relative">
+<img alt="Vintage typewriter" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY7xCW1TB2hmyzDJbLaKMgD4yo3Daj96ZZCRok291jkwu0DaOIILABBwjIRJTd7DgVt3OfC7CSvfdPfh7StK2pQj8hLLIcB0zjAEfkJotjljemVHo_ecNEK1PPyRoe2JWORmWOoGmFa6PEsmdWiYblTRGCVQU6LijX0-RBQlQhguwi5fprSQ9don4wJlcgzTbKETs9Pd_10ZuPhxefdM3hVAv4uut00MkDk2u6c4me0q7YqjSn5JDV8g"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-6 max-w-xs">
+<a class="font-headline-lg text-headline-lg text-primary" href="index.html">Poetry Garden</a>
+<p class="text-on-surface-variant font-body-md">Cultivating the art of the spoken word in Mumbai and beyond. A refuge for readers, writers, and dreamers.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="contact_poetry_garden.html">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="contact_poetry_garden.html">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Explore</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="events_master_redesign_poetry_garden.html">Our Events</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="artist_profile_redesigned_poetry_garden.html">Past Nights</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="artist_profile_redesigned_poetry_garden.html">The Gardeners</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Community</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Membership</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Volunteer</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Partner With Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Info</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact_poetry_garden.html">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Privacy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about_poetry_garden.html">Terms</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30 text-center md:text-left">
+<span class="font-body-md text-on-surface-variant opacity-70">© 2024 Poetry Garden. All rights reserved.</span>
+</div>
+</footer>
+<script>
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('top-nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('bg-background/95', 'shadow-sm', 'backdrop-blur-md');
+            nav.classList.remove('bg-transparent');
+        } else {
+            nav.classList.add('bg-transparent');
+            nav.classList.remove('bg-background/95', 'shadow-sm', 'backdrop-blur-md');
+        }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+        observer.observe(section);
+    });
+</script>
+</body></html>
